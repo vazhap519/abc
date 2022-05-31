@@ -10,6 +10,7 @@ import { useState } from 'react';
 function HomeScreen({navigation}) {
   const [User,setUser]=useState('admin@admin.com')
   const [Pass,setPass]=useState('admin123')
+
     return (
       <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={HomeScreenStyle.LogoStyle}>
@@ -19,26 +20,25 @@ function HomeScreen({navigation}) {
             <Input 
             label="USERNAME / EMAIL"
             leftIcon={<Ionicons name="person" size={20} />}
-            
+            onChangeText={(User) => setUser(User)}
             />
               <Input 
             label="PASSWORD"
             secureTextEntry={true}
             leftIcon={<SimpleLineIcons name="lock-open" size={20} color="black" />}
+            onChangeText={(value) => setPass(Pass)}
             />
           </View>
-          <TouchableOpacity style={HomeScreenStyle.LoginBtn} onPress={(check)=>{
-            if(setUser(User=='admin@admin.com' && setPass(Pass=='admin123') )){
+          <TouchableOpacity style={HomeScreenStyle.LoginBtn} onPress={()=>{
+         
               navigation.navigate('Latest')
-            }else{
-              <Text>Error</Text>
-            }
+          
            
           }}>
-            <Text style={{paddingLeft:50, fontSize:35, color:"#fff"}}>Log In</Text>
+            <Text style={{paddingLeft:50, fontSize:25, color:"#fff"}}>Log In</Text>
             <MaterialCommunityIcons name="arrow-right-bold-circle" size={35} color="#fff" style={{
-              marginLeft:200
-              ,marginTop:10,
+              marginLeft:200,
+             
                backgroundColor:"#FF6969",
                borderRadius:5
                }}/>
@@ -49,19 +49,20 @@ function HomeScreen({navigation}) {
 export default HomeScreen
 const HomeScreenStyle = StyleSheet.create({
   LogoStyle: {
-    marginVertical:50,
+   flexDirection:'row'
     },
   LogoStyleImg:{
-    
+    width:300,
+    height:60,
     marginVertical:50,
     
 
   },
   FormArea:{
-width:500,
-marginHorizontal:50,
+marginVertical:25,
+marginHorizontal:20,
 backgroundColor:'#FFF',
-    marginVertical:25,
+
     borderRadius:25,
     elevation:10,
 paddingHorizontal:45,
@@ -69,10 +70,8 @@ paddingVertical:15
   },
   LoginBtn:{
     backgroundColor:"#FF6969",
-    paddingHorizontal:100,
     paddingVertical:25,
     borderRadius:25,
-    alignContent:'space-between',
     flexDirection:"row",
     color:"#fff",
     textAlignVertical:'middle'
