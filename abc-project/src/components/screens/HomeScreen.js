@@ -25,7 +25,7 @@ function HomeScreen({navigation}) {
               <Input 
             label="PASSWORD"
             secureTextEntry={true}
-            leftIcon={<SimpleLineIcons name="lock-open" size={20} color="black" />}
+            leftIcon={<SimpleLineIcons name="lock-open" size={20} color="black" value=""/>}
             onChangeText={(value) => setPass(Pass)}
             />
           </View>
@@ -42,6 +42,12 @@ function HomeScreen({navigation}) {
                backgroundColor:"#FF6969",
                borderRadius:5
                }}/>
+          </TouchableOpacity> 
+          <TouchableOpacity style={HomeScreenStyle.CreateAccount}>
+            <Text>Don't have account? Swipe right to 
+               <Text style={HomeScreenStyle.CreateAccountRed}>create a new acount</Text>
+               </Text>
+           
           </TouchableOpacity>
       </SafeAreaView>
     );
@@ -75,5 +81,22 @@ paddingVertical:15
     flexDirection:"row",
     color:"#fff",
     textAlignVertical:'middle'
+  },
+  CreateAccount:{
+marginVertical:30,
+width:300,
+marginHorizontal:30,
+justifyContent:'space-between',
+
+flexDirection:'row',
+alignItems:'center',
+alignContent:'center'
+
+  },
+  CreateAccountRed:{
+    color:'#FF6969',
+    paddingLeft:10,
+    marginLeft:30,
+    justifyContent:'center'
   }
 });
