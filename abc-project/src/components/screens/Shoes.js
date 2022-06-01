@@ -5,7 +5,7 @@ function Shoes() {
   return (
   <SafeAreaView>
        <View>
-      <Text>Shoes</Text>
+      {/* <Text>Shoes</Text> */}
       </View>
   </SafeAreaView>
   );

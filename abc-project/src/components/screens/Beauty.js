@@ -5,7 +5,7 @@ function Beauty() {
   return (
   <SafeAreaView>
        <View>
-      <Text>Beauty</Text>
+      {/* <Text>Beauty</Text> */}
       </View>
   </SafeAreaView>
   );

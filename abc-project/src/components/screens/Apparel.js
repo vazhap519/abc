@@ -5,7 +5,7 @@ function Apparel() {
   return (
   <SafeAreaView>
       <View>
-      <Text>Apparel</Text>
+      {/* <Text>Apparel</Text> */}
       </View>
      
   </SafeAreaView>

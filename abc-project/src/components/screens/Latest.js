@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { View, SafeAreaView,StyleSheet } from 'react-native';
+
 import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
 import TopTabs from '../menus/TopTabNav';
+import CarouselF from './CarouselFlat';
+import data from '../data/Data'
 function Latest(){
 return(
     <SafeAreaView style={LatestStyle.LatestStyleContainer}>
+        {/* topBarStye */}
        <View style={LatestStyle.TopBar}>
            <View style={{marginRight:10}}>
            <Feather name="message-circle" size={24} color="black" style={{transform:'rotate(280deg)'}}/>
@@ -22,6 +26,7 @@ return(
   />
        </View>
        </View>
+{/* CategoryTyle */}
        <View >
            <Text style={{
                fontSize:35,
@@ -32,8 +37,18 @@ return(
                marginVertical:15
 
            }}>Categories</Text>
-           <TopTabs />
+           <TopTabs style={LatestStyle.TabIco} />
        </View>
+
+{/* LatestProducts */}
+<View style={LatestStyle.HeaderLatest}>
+    <Text style={LatestStyle.HeaderLatestText}>Latest</Text>
+</View>
+
+<View>
+
+</View>
+
     </SafeAreaView>
 )
 }
@@ -41,15 +56,35 @@ return(
 const LatestStyle = StyleSheet.create({
     LatestStyleContainer:{
     elevation:15,
-        height:60,
-        backgroundColor:"#fff"
+        
+        
     },
     TopBar:{
 flexDirection:'row',
 justifyContent:'flex-end',
-marginHorizontal:25,
+marginHorizontal:15,
 marginVertical:15
 
+    },
+
+    TabIco:{
+        backgroundColor:'yellow'
+    },
+
+
+    HeaderLatest:{
+color:'#ccc',
+fontSize:35,
+paddingHorizontal:15,
+paddingVertical:15,
+marginTop:20
+    },
+    HeaderLatestText:{
+        color:'#ccc',
+fontSize:35,
+fontWeight:'bold'
     }
+
+
 })
 export default Latest
