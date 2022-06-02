@@ -3,12 +3,11 @@ import { View, SafeAreaView,StyleSheet ,ScrollView} from 'react-native';
 
 import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
-import TopTabs from '../menus/TopTabNav';
-import BottomTabsNav from '../menus/BottomTabsNav';
-import NestedNavs from '../menus/TopTabNav';
+// import TopTabs from '../menus/TopTabNav';
 import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
-import { NavigationContainer } from '@react-navigation/native';
+// import BottomTabsNavfrom from '../menus/BottomTabsNav';
+ import Navs from '../menus/Navs';
 
 const  Latest=()=>{
 return(
@@ -41,7 +40,7 @@ return(
                marginVertical:15
 
            }}>Categories</Text>
-       <NestedNavs />
+   <Navs />
           
        
   
@@ -55,6 +54,7 @@ return(
 <ScrollView>
     <CarouselF  data={FlatlistData}/>
 </ScrollView>
+
     </SafeAreaView>
 )
 
