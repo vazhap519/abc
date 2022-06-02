@@ -4,8 +4,10 @@ import { View, SafeAreaView,StyleSheet ,ScrollView} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
 import TopTabs from '../menus/TopTabNav';
+import BottomTabsNav from '../menus/BottomTabsNav';
 import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
+import { NavigationContainer } from '@react-navigation/native';
 function Latest(){
 return(
     <SafeAreaView style={LatestStyle.LatestStyleContainer}>
@@ -48,6 +50,11 @@ return(
 <ScrollView>
     <CarouselF  data={FlatlistData}/>
 </ScrollView>
+
+{/* bottomNav */}
+<NavigationContainer>
+<BottomTabsNav />
+</NavigationContainer>
 
     </SafeAreaView>
 )

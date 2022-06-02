@@ -8,12 +8,13 @@ import { TabItem } from '@rneui/base/dist/Tab/Tab.Item';
 
 
 const CarouselF=({data})=>{
-
+console.log(data.url)
     return(
     
             <FlatList data={data}
             keyExtractor={(item,index)=>'key' + index}
-            horizontal
+            horizontal={true}
+        
             renderItem={({item})=>{
                 return(
                     <FlatCarouselItem item={item}/>
