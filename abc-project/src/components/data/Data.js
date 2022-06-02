@@ -1,92 +1,15 @@
-export const data=[
+
+import * as React from 'react';
+import { View, Text } from 'react-native';
+
+const FlatlistData=[
+
     {
         id:1,
         title:'for all your summer cloathing needs',
         BtnText:'see more',
-        uri:'./images/0001_fashion_image.jpg',
-    },
-    {
-        id:2,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0002_fashion_image.jpg',
-    },
-    {
-        id:3,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0003_fashion_image.jpg',
-    },
-    {
-        id:4,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0004_fashion_image.jpg',
-    },
-    {
-        id:5,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0005_fashion_image.jpg',
-    },
-    {
-        id:6,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0006_fashion_image.jpg',
-    },
-    {
-        id:7,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0007_fashion_image.jpg',
-    },
-    {
-        id:8,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0008_fashion_image.jpg',
-    },
-    {
-        id:9,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0009_fashion_image.jpg',
-    },
-    {
-        id:10,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0010_fashion_image.jpg',
-    },
-    {
-        id:11,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0011_fashion_image.jpg',
-    },
-    {
-        id:12,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0012_fashion_image.jpg',
-    },
-    {
-        id:13,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0013_fashion_image.jpg',
-    },
-    {
-        id:14,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0014_fashion_image.jpg',
-    },
-    {
-        id:15,
-        title:'for all your summer cloathing needs',
-        BtnText:'see more',
-        uri:'./images/0015_fashion_image.jpg',
-    },
+        url:'./images/0001_fashion_image.jpg',
+       
+    }
 ]
+export default FlatlistData

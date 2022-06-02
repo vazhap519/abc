@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { View, SafeAreaView,StyleSheet } from 'react-native';
+import { View, SafeAreaView,StyleSheet ,ScrollView} from 'react-native';
 
 import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
 import TopTabs from '../menus/TopTabNav';
-import CarouselF from './CarouselFlat';
-import data from '../data/Data'
+import CarouselF from './carousels/CarouselFlat';
+import FlatlistData from '../data/Data';
 function Latest(){
 return(
     <SafeAreaView style={LatestStyle.LatestStyleContainer}>
@@ -45,9 +45,9 @@ return(
     <Text style={LatestStyle.HeaderLatestText}>Latest</Text>
 </View>
 
-<View>
-
-</View>
+<ScrollView>
+    <CarouselF  data={FlatlistData}/>
+</ScrollView>
 
     </SafeAreaView>
 )
@@ -56,7 +56,8 @@ return(
 const LatestStyle = StyleSheet.create({
     LatestStyleContainer:{
     elevation:15,
-        
+        height:'auto',
+        backgroundColor:'#f1f1f1'
         
     },
     TopBar:{
