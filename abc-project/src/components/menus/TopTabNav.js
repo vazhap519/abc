@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { View ,StyleSheet,Text, SafeAreaView} from 'react-native-web';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -8,11 +9,18 @@ import Apparel from '../screens/Apparel'
 import Shoes from '../screens/Shoes';
 import Beauty from '../screens/Beauty';
 import SeeAll from '../screens/SeeAll';
-import { View ,StyleSheet,Text} from 'react-native-web';
+
+import HomeScreen from '../screens/HomeScreen';
+import SearchScreen from '../screens/SearchScreen';
+import CartScreen from '../screens/CartScreen';
+import ProfileScreen   from '../screens/ProfileScreen';
+import MoreScreen   from '../screens/MoreScreen';
+
+
 const Tab = createMaterialTopTabNavigator();
 function TopTabs() {
   return (
-    <Tab.Navigator screenOptions={{
+    <Tab.Navigator    screenOptions={{
       tabBarActiveTintColor: '#ccc',
       tabBarLabelStyle: { fontSize: 20,marginTop:25,marginLeft:25 },
       tabBarStyle: { backgroundColor: '#fff' },
@@ -122,4 +130,31 @@ function TopTabs() {
     </Tab.Navigator>
   );
 }
-export default TopTabs
+
+
+
+const BottTab = createBottomTabNavigator();
+
+const  BottomTabsNav=()=> {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="search" component={SearchScreen} />
+      <Tab.Screen name="Cart" component={CartScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="More" component={MoreScreen} />
+    </Tab.Navigator>
+  );
+}
+
+const NestedNavs=()=>{
+  return(
+<SafeAreaView>
+<TopTabs />
+<BottomTabsNav />
+</SafeAreaView>
+
+
+  )
+}
+export default NestedNavs

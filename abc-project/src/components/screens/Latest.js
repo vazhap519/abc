@@ -5,10 +5,12 @@ import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
 import TopTabs from '../menus/TopTabNav';
 import BottomTabsNav from '../menus/BottomTabsNav';
+import NestedNavs from '../menus/TopTabNav';
 import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
 import { NavigationContainer } from '@react-navigation/native';
-function Latest(){
+
+const  Latest=()=>{
 return(
     <SafeAreaView style={LatestStyle.LatestStyleContainer}>
         {/* topBarStye */}
@@ -39,7 +41,10 @@ return(
                marginVertical:15
 
            }}>Categories</Text>
-           <TopTabs style={LatestStyle.TabIco} />
+       <NestedNavs />
+          
+       
+  
        </View>
 
 {/* LatestProducts */}
@@ -50,14 +55,9 @@ return(
 <ScrollView>
     <CarouselF  data={FlatlistData}/>
 </ScrollView>
-
-{/* bottomNav */}
-<NavigationContainer>
-<BottomTabsNav />
-</NavigationContainer>
-
     </SafeAreaView>
 )
+
 }
 
 const LatestStyle = StyleSheet.create({
