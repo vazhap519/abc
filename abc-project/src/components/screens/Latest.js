@@ -1,14 +1,25 @@
 import * as React from 'react';
-import { View, SafeAreaView,StyleSheet ,ScrollView} from 'react-native';
+import { View, SafeAreaView,StyleSheet ,ScrollView,Image} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
 import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
-import NewProductCarousel from './carousels/newProductsCarousel/NewProductCarousel';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import TopTabs from '../menus/TopTabNav';
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import BottomNav from '../menus/BottomNav';
-const  LatestScreen=()=>{
+import Apparel from './Apparel';
+
+import Data2 from '../data/data2';
+
+
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+
+ 
+    
+   
+
+const  LatestScreen=({navigation})=>{
 return(
     <SafeAreaView style={LatestStyle.LatestStyleContainer}>
      
@@ -40,26 +51,75 @@ return(
                marginVertical:15
 
            }}>Categories</Text>
-            <TopTabs/>
+
+
+
+            <ScrollView 
+            horizontal
+            style={LatestStyle.TopCats}
+            >
+
+          
+           <TouchableOpacity style={LatestStyle.Apparel}
+           onPress={() => {
+            navigation.navigate('Apparel');
+          }}
+           >
+           <FontAwesome5 name="tshirt" size={30} color="grey"  style={LatestStyle.ApparelIco} />
+           <Text style={LatestStyle.TexTops}> Apparel</Text>
+           </TouchableOpacity>
+
+
+
+
+           <TouchableOpacity style={LatestStyle.Beauty}>
+           <MaterialCommunityIcons name="lipstick" size={30} color="grey" style={LatestStyle.BeautyIco} />
+           <Text style={LatestStyle.TexTops}> Beauty</Text>
+           </TouchableOpacity>
+
+           <TouchableOpacity style={LatestStyle.Shoes}>
+           <MaterialCommunityIcons name="shoe-heel" size={30} color="grey" style={LatestStyle.ShoesIco}/>
+           <Text style={LatestStyle.TexTops}> shoes</Text>
+           </TouchableOpacity>
+
+           <TouchableOpacity style={LatestStyle.SeeAll}>
+           <MaterialIcons name="keyboard-arrow-right" size={30} color="#FF6969" style={LatestStyle.SeeAllIco} />
+           <Text style={LatestStyle.TexTops}> See all</Text>
+           </TouchableOpacity>
+           </ScrollView>
                  </View>
 
 {/* LatestProducts */}
 <View style={LatestStyle.HeaderLatest}>
     <Text style={LatestStyle.HeaderLatestText}>Latest</Text>
 </View>
-<View>
-
-
 <ScrollView>
     <CarouselF  data={FlatlistData}/>
 </ScrollView>
-</View>
+
+
+
+ {Data2.map((myData)=>{
+     return(
+        <ScrollView>
+            <View>
+            <Image key={myData.id.toString()} source={myData.url}/>
+   <Text  key={myData.id.toString()}>{myData.title}</Text>
+            </View>
+     
+</ScrollView>
+      
+         
+     )
+ })}
+
+
 
 <View>
 
 </View>
 
-
+<BottomNav />
     </SafeAreaView>
    
 )
@@ -98,14 +158,72 @@ marginTop:20
 fontSize:35,
 fontWeight:'bold'
     },
-    Test:{
-        backgroundColor:'red',
-        height:100,
-        width:100,
-        position:'relative',
-        zIndex:30
 
+
+    TopCats:{
+         flex:1,
+        alignContent:'space-between',
+    },
+
+
+    Apparel:{
+        width:60,
+        height:90   ,
+        marginHorizontal:10,
+        marginVertical:10
+
+    },
+    ApparelIco:{
+        backgroundColor:'orange',
+        paddingHorizontal:15,
+        paddingVertical:15,
+        borderRadius:50
+    },
+
+    Beauty:{
+        width:60,
+        height:90,
+        marginHorizontal:10,
+        marginVertical:10
+    },
+    BeautyIco:{
+        backgroundColor:'skyblue',
+        paddingHorizontal:15,
+        paddingVertical:15,
+        borderRadius:50
+    },
+
+    Shoes:{
+        width:60,
+        height:90,
+        marginHorizontal:10,
+        marginVertical:10
+    },
+    ShoesIco:{
+        backgroundColor:'green',
+        paddingHorizontal:15,
+        paddingVertical:15,
+        borderRadius:50
+    },
+    SeeAll:{
+        width:60,
+        height:90 ,
+        marginHorizontal:10,
+        marginVertical:10
+    },
+
+    SeeAllIco:{
+        backgroundColor:'white',
+        paddingHorizontal:15,
+        paddingVertical:15,
+        borderRadius:50
+    },
+    TexTops:{
+      
+        
+        fontSize:16,
+        textAlign:'center',
+        textTransform:'Capitalize'
     }
-
 
 })

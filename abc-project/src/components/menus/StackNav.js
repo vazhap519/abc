@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import BottomTabsNav from './BottomNav';
@@ -13,13 +12,14 @@ import Latest from '../screens/Latest';
 
 const Stack = createNativeStackNavigator();
 
-function StackNav() {
+function StackNav({navigation}) {
   return (
 
       <Stack.Navigator>
         <Stack.Group>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Latest" component={Latest} />
+
     
         </Stack.Group>
      
