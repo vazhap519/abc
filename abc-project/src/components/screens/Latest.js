@@ -4,13 +4,14 @@ import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
 import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
-import StackNav from '../menus/StackNav';
 import NewProductCarousel from './carousels/newProductsCarousel/NewProductCarousel';
-import Data2 from '../data/data2';
-
-const  Latest=()=>{
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import TopTabs from '../menus/TopTabNav';
+import BottomNav from '../menus/BottomNav';
+const  LatestScreen=()=>{
 return(
     <SafeAreaView style={LatestStyle.LatestStyleContainer}>
+     
         {/* topBarStye */}
        <View style={LatestStyle.TopBar}>
            <View style={{marginRight:10}}>
@@ -39,13 +40,8 @@ return(
                marginVertical:15
 
            }}>Categories</Text>
-
-          
-  
-         
-     
-  
-       </View>
+            <TopTabs/>
+                 </View>
 
 {/* LatestProducts */}
 <View style={LatestStyle.HeaderLatest}>
@@ -60,15 +56,16 @@ return(
 </View>
 
 <View>
-<NewProductCarousel data/>
+
 </View>
 
 
     </SafeAreaView>
+   
 )
 
 }
-
+export default LatestScreen
 const LatestStyle = StyleSheet.create({
     LatestStyleContainer:{
     elevation:15,
@@ -112,4 +109,3 @@ fontWeight:'bold'
 
 
 })
-export default Latest

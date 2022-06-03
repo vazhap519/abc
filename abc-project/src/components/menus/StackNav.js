@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import BottomTabsNav from './BottomTabsNav';
+import BottomTabsNav from './BottomNav';
 import TopTabs from './TopTabNav';
 import HomeScreen from '../screens/HomeScreen';
 import Latest from '../screens/Latest';
@@ -17,10 +17,12 @@ function StackNav() {
   return (
 
       <Stack.Navigator>
+        <Stack.Group>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Latest" component={Latest} />
-          <Stack.Screen name="BottomTabsNav" component={BottomTabsNav}/>
-          <Stack.Screen name="TopTabs" component={TopTabs} />
+    
+        </Stack.Group>
+     
       </Stack.Navigator>
  
   );

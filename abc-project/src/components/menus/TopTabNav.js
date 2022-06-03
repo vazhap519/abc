@@ -13,15 +13,15 @@ import SeeAll from '../screens/SeeAll';
 
 
 
-const Tab = createMaterialTopTabNavigator();
+const TopTab = createMaterialTopTabNavigator();
 const  TopTabs=()=> {
   return (
-    <Tab.Navigator    screenOptions={{
+    <TopTab.Navigator    screenOptions={{
       tabBarActiveTintColor: '#ccc',
       tabBarLabelStyle: { fontSize: 20,marginTop:25,marginLeft:25 },
       tabBarStyle: { backgroundColor: '#fff' },
     }} >
-      <Tab.Screen name="apparel" component={Apparel} options={{
+      <TopTab.Screen name="apparel" component={Apparel} options={{
      tabBarLabel:'apparel',
      labelStyle: {
       fontSize: 50,
@@ -50,7 +50,7 @@ const  TopTabs=()=> {
           
         }
       }} />
-        <Tab.Screen name="Beauty" component={Beauty} 
+        <TopTab.Screen name="Beauty" component={Beauty} 
       options={{
         tabBarIcon:()=>{
           return(
@@ -77,7 +77,7 @@ const  TopTabs=()=> {
         }
       }}
       />
-      <Tab.Screen name="Shoes" component={Shoes} 
+      <TopTab.Screen name="Shoes" component={Shoes} 
       options={{
         tabBarIcon:()=>{
           return(
@@ -100,7 +100,7 @@ const  TopTabs=()=> {
       }}
       />
     
-      <Tab.Screen name="SeeAll" component={SeeAll} 
+      <TopTab.Screen name="SeeAll" component={SeeAll} 
       options={{
         tabBarIcon:()=>{
           return(
@@ -123,7 +123,7 @@ const  TopTabs=()=> {
       }}
       
       />
-    </Tab.Navigator>
+    </TopTab.Navigator>
   );
 }
 export default TopTabs
