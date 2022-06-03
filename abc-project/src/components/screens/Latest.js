@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { View, SafeAreaView,StyleSheet ,ScrollView} from 'react-native';
-
 import { Feather } from '@expo/vector-icons';
 import { Badge,Text } from '@rneui/base';
-// import TopTabs from '../menus/TopTabNav';
 import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
-// import BottomTabsNavfrom from '../menus/BottomTabsNav';
- import Navs from '../menus/Navs';
+import StackNav from '../menus/StackNav';
+import NewProductCarousel from './carousels/newProductsCarousel/NewProductCarousel';
+import Data2 from '../data/data2';
 
 const  Latest=()=>{
 return(
@@ -40,9 +39,11 @@ return(
                marginVertical:15
 
            }}>Categories</Text>
-   <Navs />
+
           
-       
+  
+         
+     
   
        </View>
 
@@ -50,10 +51,18 @@ return(
 <View style={LatestStyle.HeaderLatest}>
     <Text style={LatestStyle.HeaderLatestText}>Latest</Text>
 </View>
+<View>
+
 
 <ScrollView>
     <CarouselF  data={FlatlistData}/>
 </ScrollView>
+</View>
+
+<View>
+<NewProductCarousel data/>
+</View>
+
 
     </SafeAreaView>
 )
@@ -91,6 +100,14 @@ marginTop:20
         color:'#ccc',
 fontSize:35,
 fontWeight:'bold'
+    },
+    Test:{
+        backgroundColor:'red',
+        height:100,
+        width:100,
+        position:'relative',
+        zIndex:30
+
     }
 
 

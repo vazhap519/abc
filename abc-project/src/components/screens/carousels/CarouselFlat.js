@@ -8,7 +8,7 @@ import { TabItem } from '@rneui/base/dist/Tab/Tab.Item';
 
 
 const CarouselF=({data})=>{
-console.log(data.url)
+
     return(
     
             <FlatList data={data}

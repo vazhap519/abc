@@ -5,7 +5,7 @@ import FlatlistData from '../../data/Data';
 import { MaterialIcons } from '@expo/vector-icons';
 const {width,height}=Dimensions.get('window');
 const FlatCarouselItem=({item})=>{
-    console.log(item.url)
+
     return(
       <View style={FlatlisCardStyle.CardItem}>
           <Image  source={{uri:item.url}}  style={FlatlisCardStyle.CardItemImg}/>

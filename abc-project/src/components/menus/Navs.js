@@ -7,17 +7,4 @@ import 'react-native-gesture-handler';
 
 
 
-const RootStack = createStackNavigator(
-    {
-        Bottom: BottomTabsNav,
-      Top: TopTabs
-    }
-)
-export default function Navs() {
-  return (
-    <View>
-    <RootStack/>
-    </View>
-  )
-}
 

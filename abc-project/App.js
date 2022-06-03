@@ -11,7 +11,6 @@ function App() {
   return (
     <NavigationContainer>
       <StackNav />
-
     </NavigationContainer>
   );
 }
