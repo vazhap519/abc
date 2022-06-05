@@ -5,7 +5,7 @@ import { Badge, Text } from '@rneui/base';
 import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
-import BottomNav from '../menus/BottomNav';
+
 import Apparel from './Apparel';
 
 import Data2 from '../data/data2';
@@ -15,13 +15,13 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
-
+import DiferentFlat from './carousels/newProductsCarousel/DiferentFlat';
 
 
 
 const LatestScreen = ({ navigation }) => {
     return (
-        <SafeAreaView style={LatestStyle.LatestStyleContainer}>
+        <ScrollView style={LatestStyle.LatestStyleContainer}>
 
             {/* topBarStye */}
             <View style={LatestStyle.TopBar}>
@@ -113,11 +113,11 @@ const LatestScreen = ({ navigation }) => {
 
 
             <View>
-
+                        <DiferentFlat />
             </View>
 
 
-        </SafeAreaView>
+        </ScrollView>
 
     )
 
