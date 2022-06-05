@@ -5,7 +5,7 @@ function SeeAll() {
   return (
   <SafeAreaView>
        <View>
-      {/* <Text>SeeAll</Text> */}
+      <Text>SeeAll</Text>
       </View>
   </SafeAreaView>
   );

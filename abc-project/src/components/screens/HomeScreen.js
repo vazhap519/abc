@@ -6,7 +6,7 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useState } from 'react';
-
+import LatestScreen from './Latest';
 function HomeScreen({navigation}) {
   const [User,setUser]=useState('admin@admin.com')
   const [Pass,setPass]=useState('admin123')
@@ -31,7 +31,7 @@ function HomeScreen({navigation}) {
           </View>
           <TouchableOpacity style={HomeScreenStyle.LoginBtn} onPress={()=>{
          
-              navigation.navigate('Latest')
+              navigation.navigate('LatestScreen')
           
            
           }}>

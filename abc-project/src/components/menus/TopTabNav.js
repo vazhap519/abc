@@ -10,17 +10,17 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Tops=createStackNavigator()
 
 const TopsNav=()=>{
+  return(
   <Tops.Navigator>
      <Tops.Screen name='apparel' component={Apparel}/>
   <Tops.Screen name='Beauty' component={Beauty}/>
   <Tops.Screen name='Shoes' component={Shoes}/>
   <Tops.Screen name='seeAll' component={SeeAll}/>
   </Tops.Navigator>
- 
+  )
 }
 
 export default TopsNav
-
-
+ 
 
 

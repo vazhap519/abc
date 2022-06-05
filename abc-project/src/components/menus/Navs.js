@@ -5,16 +5,18 @@ import BottomTabsNav from './BottomNav';
 import TopTabs from './TopTabNav';
 import 'react-native-gesture-handler';
 import HomeScreen from '../screens/HomeScreen';
+import TopsNav from './TopTabNav';
+import BottomNav from './BottomNav';
 const StackRoute = createStackNavigator();
 
 
-const RouteNav=()=>{
-    return(
-<StackRoute.Navigator initialRouteName='HomeScreen'>
-<StackRoute.Screen name='TopTabs' component={TopTabs}/>
-<StackRoute.Screen name='BottomTabsNav' component={BottomTabsNav}/>
-</StackRoute.Navigator>
-)
+const RouteNav = () => {
+    return (
+        <StackRoute initialRouteName='HomeScreen'>
+            <StackRoute.Screen name='TopTabs' component={TopTabs} />
+            <StackRoute.Screen name='BottomTabsNav' component={BottomNav} />
+        </StackRoute>
+    )
 
 }
 export default RouteNav
