@@ -6,9 +6,7 @@ import CarouselF from './carousels/CarouselFlat';
 import FlatlistData from '../data/Data';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 
-import Apparel from './Apparel';
 
-import Data2 from '../data/data2';
 
 
 import { FontAwesome5 } from '@expo/vector-icons';

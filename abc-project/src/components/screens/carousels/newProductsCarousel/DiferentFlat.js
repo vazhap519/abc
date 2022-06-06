@@ -19,6 +19,7 @@ renderItem={({item})=>(
     {item.title}
   </Text>
   <Text style={DiferebtStyle.scrollDiferentPrice}>
+   
     {item.Price}
   </Text>
   </View>
